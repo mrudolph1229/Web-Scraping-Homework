@@ -21,7 +21,7 @@
         <h3>{{ mars.latest_headline }}</h3>
         <p>{{ mars.teaser }}</p>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3", border="1">
         <h3>Current Weather on Mars:</h3>
         <p>{{ mars.latest_tweet }}</p>
       </div>
@@ -33,17 +33,29 @@
       </div>
       <div class = "col-lg-3">
         <h3>Mars Facts</h3>
-        <section>{{ mars.data_table }}</section>
+        {{ mars.data_table|safe }}
       </div>
     </div>
     <div class="row">
       <h3 style="text-align:center">Mars Hemispheres</h3>
       <div class="col-md-6">
-        <img src={{ mars.hemi_images[0].img_url }}>
-        <h2>{{ mars.hemi_images[0].title }}</h2>
+        <img src={{ mars.hemi_images[0].img_url|safe }} style='max-width:100%'>
+        <h2 style="text-align:center">{{ mars.hemi_images[0].title|safe }}</h2>
       </div>
       <div class="col-md-6">
-        <section>{{ mars.hemi_images }}</section>
+        <img src={{ mars.hemi_images[1].img_url|safe }} style='max-width:100%'>
+        <h2 style="text-align:center">{{ mars.hemi_images[1].title|safe }}</h2>
+      </div>      
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-md-6">
+        <img src={{ mars.hemi_images[2].img_url|safe }} style='max-width:100%'>
+        <h2 style="text-align:center">{{ mars.hemi_images[2].title|safe }}</h2>
+      </div>
+      <div class="col-md-6">
+        <img src={{ mars.hemi_images[3].img_url|safe }} style='max-width:100%'>
+        <h2 style="text-align:center">{{ mars.hemi_images[3].title|safe }}</h2>
       </div>      
     </div>
   </div>  

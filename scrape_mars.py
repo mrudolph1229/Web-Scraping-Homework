@@ -56,15 +56,15 @@ def scrape_info():
         dicts={'title':title, 'img_url':img_url}
         info.append(dicts)
 
-        mars_data = {
-            "latest_headline": latest_headline,
-            "teaser": teaser,
-            "featured_image": featured_image_url,
-            "latest_tweet" : latest_tweet,
-            "data_table": html_table,
-            "hemi_images": info
-        }
+    mars_data = {
+        "latest_headline": latest_headline,
+        "teaser": teaser,
+        "featured_image": featured_image_url,
+        "latest_tweet" : latest_tweet,
+        "data_table": html_table,
+        "hemi_images": info
+    }
         
-        browser.quit()
+    browser.quit()
         
-        return mars_data
+    return mars_data
