@@ -35,6 +35,8 @@ def scrape_info():
     url = 'http://space-facts.com/mars/'
     tables = pd.read_html(url)
     df = tables[0]
+    df.columns = ['Description','Values']
+    df.set_index('Description', inplace=True)
     html_table = df.to_html()
     html_table.replace('\n', '')
 
