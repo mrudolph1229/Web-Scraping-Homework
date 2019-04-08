@@ -9,7 +9,7 @@ import pandas as pd
 
 def scrape_info():
     #scrape mars news
-    response=requests.get('https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest')
+    response=requests.get('https://mars.nasa.gov/news/')
     soup = BeautifulSoup(response.text, 'html.parser')
     latest_headline = soup.find('div', class_="content_title").text.strip()
     teaser = soup.find('div', class_="rollover_description_inner").text.strip()
